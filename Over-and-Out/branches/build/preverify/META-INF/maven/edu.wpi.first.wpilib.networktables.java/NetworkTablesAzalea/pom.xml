@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>edu.wpi.first.wpilib.networktables.java</groupId>
   <artifactId>NetworkTablesAzalea</artifactId>
   <packaging>jar</packaging>
   <version>0.1.0-SNAPSHOT</version>
-  
+
   <parent>
     <groupId>edu.wpi.first.wpilib.templates.azalea</groupId>
     <artifactId>library-jar</artifactId>
@@ -21,21 +22,21 @@
   </repositories>
 
   <dependencies>
-	<dependency>
-	  <groupId>com.sun.squawk</groupId>
-	  <artifactId>runtime</artifactId>
-	</dependency>
+    <dependency>
+      <groupId>com.sun.squawk</groupId>
+      <artifactId>runtime</artifactId>
+    </dependency>
   </dependencies>
-  
+
   <build>
-	<plugins>
-	  <plugin>
+    <plugins>
+      <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.1</version>
         <configuration>
-		  <testExcludes>
-			<exclude>edu/wpi/first/wpilibj/networktables2/system/SystemTest.java</exclude>
-		  </testExcludes>
+          <testExcludes>
+            <exclude>edu/wpi/first/wpilibj/networktables2/system/SystemTest.java</exclude>
+          </testExcludes>
         </configuration>
       </plugin>
       <plugin>
@@ -55,19 +56,19 @@
             </configuration>
           </execution>
         </executions>
-	  </plugin>
-	  <plugin>
-		<groupId>org.codehaus.mojo</groupId>
-		<artifactId>exec-maven-plugin</artifactId>
-	  </plugin>
-	  <plugin>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+      </plugin>
+      <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-source-plugin</artifactId>
-	  </plugin>
-	  <plugin>
-		<groupId>org.apache.maven.plugins</groupId>
-		<artifactId>maven-javadoc-plugin</artifactId>
-	  </plugin>
-	</plugins>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+      </plugin>
+    </plugins>
   </build>
 </project>

@@ -8,39 +8,38 @@ import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc2974.Pneumatotron.Robot;
 
 /**
- *
  * @author Alex
  */
 public class LowerIntake extends Command {
-    
-    public LowerIntake(double secs) {
-        // Use requires() here to declare subsystem dependencies
-        // eg. requires(chassis);
-        requires(Robot.intake);
-        setTimeout(secs);
-    }
 
-    // Called just before this Command runs the first time
-    protected void initialize() {
-        Robot.intake.lift(-.5);
-    }
+	public LowerIntake(double secs) {
+		// Use requires() here to declare subsystem dependencies
+		// eg. requires(chassis);
+		requires(Robot.intake);
+		setTimeout(secs);
+	}
 
-    // Called repeatedly when this Command is scheduled to run
-    protected void execute() {
-    }
+	// Called just before this Command runs the first time
+	protected void initialize() {
+		Robot.intake.lift(-.5);
+	}
 
-    // Make this return true when this Command no longer needs to run execute()
-    protected boolean isFinished() {
-        return isTimedOut();
-    }
+	// Called repeatedly when this Command is scheduled to run
+	protected void execute() {
+	}
 
-    // Called once after isFinished returns true
-    protected void end() {
-        Robot.intake.lift(0);
-    }
+	// Make this return true when this Command no longer needs to run execute()
+	protected boolean isFinished() {
+		return isTimedOut();
+	}
 
-    // Called when another command which requires one or more of the same
-    // subsystems is scheduled to run
-    protected void interrupted() {
-    }
+	// Called once after isFinished returns true
+	protected void end() {
+		Robot.intake.lift(0);
+	}
+
+	// Called when another command which requires one or more of the same
+	// subsystems is scheduled to run
+	protected void interrupted() {
+	}
 }

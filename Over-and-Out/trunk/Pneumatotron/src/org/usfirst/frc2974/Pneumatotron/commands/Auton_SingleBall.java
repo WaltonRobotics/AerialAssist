@@ -14,30 +14,29 @@ import org.usfirst.frc2974.Pneumatotron.commands.Autonomous.QuickLaunch;
 import org.usfirst.frc2974.Pneumatotron.commands.Autonomous.SetLatch;
 
 /**
- *
  * @author Walton Robotics
  */
 public class Auton_SingleBall extends CommandGroup {
 
-    public Auton_SingleBall(int driveOffsetInches, boolean hotGoal) {
-        /*
-         * BLOCK A - Lowers intake while charging catapult and driving forward.
-         */
-        //addParallel(new AutoIntakeSequence());
-        addParallel(new LowerIntakeAndSlowRoll());
-        addSequential(new DriveToDist(driveOffsetInches, false));
-        /*
-         * BLOCK B - Waits for the robot to stop.
-         */
-        addParallel(new PressurizeCylinders());
-        addSequential(new DelayMaker());
+	public Auton_SingleBall(int driveOffsetInches, boolean hotGoal) {
+		/*
+		 * BLOCK A - Lowers intake while charging catapult and driving forward.
+		 */
+		//addParallel(new AutoIntakeSequence());
+		addParallel(new LowerIntakeAndSlowRoll());
+		addSequential(new DriveToDist(driveOffsetInches, false));
+		/*
+		 * BLOCK B - Waits for the robot to stop.
+		 */
+		addParallel(new PressurizeCylinders());
+		addSequential(new DelayMaker());
 
-        /*
-         * BLOCK C - Fires catapult
-         */
-        addSequential(new QuickLaunch(hotGoal));
-        addSequential(new SetLatch());
-    }
+		/*
+		 * BLOCK C - Fires catapult
+		 */
+		addSequential(new QuickLaunch(hotGoal));
+		addSequential(new SetLatch());
+	}
 }
 // Add Commands here:
 // e.g. addSequential(new Command1());

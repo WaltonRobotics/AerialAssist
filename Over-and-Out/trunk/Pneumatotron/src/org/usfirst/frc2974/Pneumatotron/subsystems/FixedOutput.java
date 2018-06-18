@@ -8,21 +8,20 @@ import edu.wpi.first.wpilibj.PIDOutput;
 import edu.wpi.first.wpilibj.Talon;
 
 /**
- *
  * @author Walton Robotics
  */
 public class FixedOutput implements PIDOutput {
 
-    Talon front;
-    Talon back;
+	Talon front;
+	Talon back;
 
-    public FixedOutput(Talon f, Talon b) {
-        front = f;
-        back = b;
-    }
+	public FixedOutput(Talon f, Talon b) {
+		front = f;
+		back = b;
+	}
 
-    public void pidWrite(double output) {
-        front.pidWrite(output);
-        back.pidWrite(output);
-    }
+	public void pidWrite(double output) {
+		front.pidWrite(output);
+		back.pidWrite(output);
+	}
 }

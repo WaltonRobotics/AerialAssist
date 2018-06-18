@@ -8,34 +8,32 @@ package org.usfirst.frc2974.Pneumatotron.commands;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 import org.usfirst.frc2974.Pneumatotron.commands.Autonomous.DelayMaker;
 import org.usfirst.frc2974.Pneumatotron.commands.Autonomous.DriveToDist;
-import org.usfirst.frc2974.Pneumatotron.commands.Autonomous.LowerIntakeAndSlowRoll;
 import org.usfirst.frc2974.Pneumatotron.commands.Autonomous.PressurizeCylinders;
 import org.usfirst.frc2974.Pneumatotron.commands.Autonomous.QuickLaunch;
 import org.usfirst.frc2974.Pneumatotron.commands.Autonomous.SetLatch;
 
 /**
- *
  * @author Walton Robotics
  */
 public class Auton_DualPart2 extends CommandGroup {
 
-    public Auton_DualPart2(int driveOffsetInches) {
-        /*
-         * BLOCK A - Drives forward.
-         */
-        addSequential(new DriveToDist(driveOffsetInches, false));
-        /*
-         * BLOCK B - Waits for the robot to stop.
-         */
-        addParallel(new PressurizeCylinders());
-        addSequential(new DelayMaker());
+	public Auton_DualPart2(int driveOffsetInches) {
+		/*
+		 * BLOCK A - Drives forward.
+		 */
+		addSequential(new DriveToDist(driveOffsetInches, false));
+		/*
+		 * BLOCK B - Waits for the robot to stop.
+		 */
+		addParallel(new PressurizeCylinders());
+		addSequential(new DelayMaker());
 
-        /*
-         * BLOCK C - Fires catapult
-         */
-        addSequential(new QuickLaunch(false));
-        addSequential(new SetLatch());
-    }
+		/*
+		 * BLOCK C - Fires catapult
+		 */
+		addSequential(new QuickLaunch(false));
+		addSequential(new SetLatch());
+	}
 }
 // Add Commands here:
 // e.g. addSequential(new Command1());

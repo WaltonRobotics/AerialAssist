@@ -8,25 +8,24 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 import org.usfirst.frc2974.Pneumatotron.commands.Autonomous.ReverseAndPickup;
 
 /**
- *
  * @author Alex
  */
 public class Auton_DualBall extends CommandGroup {
-    
-    public Auton_DualBall() {
-        /*
-         * BLOCK A - Lowers intake, drives, and fires.
-         */
-        addSequential(new Auton_SingleBall(0, false));
-        /*
-         * BLOCK B - Drives back to start point + 2ft with intake down and roller on.
-         */
-        addSequential(new ReverseAndPickup(36));
-        /*
-         * BLOCK C - Raises arm to help ball into catapult, charges, and drives forward + 2 feet.
-         */
-        addSequential(new Auton_DualPart2(36));
-    }
+
+	public Auton_DualBall() {
+		/*
+		 * BLOCK A - Lowers intake, drives, and fires.
+		 */
+		addSequential(new Auton_SingleBall(0, false));
+		/*
+		 * BLOCK B - Drives back to start point + 2ft with intake down and roller on.
+		 */
+		addSequential(new ReverseAndPickup(36));
+		/*
+		 * BLOCK C - Raises arm to help ball into catapult, charges, and drives forward + 2 feet.
+		 */
+		addSequential(new Auton_DualPart2(36));
+	}
 }
 // Add Commands here:
 // e.g. addSequential(new Command1());
